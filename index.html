@@ -1,0 +1,18 @@
+<div id="age-gate">
+  <h1>Welcome</h1>
+  <p>Please verify your age to continue.</p>
+  <button onclick="setAge(10)">Under 13</button>
+  <button onclick="setAge(15)">13 - 17</button>
+  <button onclick="setAge(21)">18+</button>
+</div>
+
+<script>
+  async function setAge(age) {
+    await fetch('/api/set-age', {
+      method: 'POST',
+      body: JSON.stringify({ session_id: sid, age: age })
+    });
+    document.getElementById('age-gate').style.display = 'none';
+    document.getElementById('chat-area').style.display = 'block';
+  }
+</script>
