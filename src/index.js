@@ -1,29 +1,22 @@
 export default {
   async fetch(request, env) {
-    // 1. SECURITY CHECK: Verify Wix Request
+    // 1. AUTHENTICATION
     const authHeader = request.headers.get("X-Empire-Auth");
     if (authHeader !== env.WIX_SECRET_KEY) {
-      return new Response("Unauthorized: Invalid Key", { status: 403 });
+      return new Response("Unauthorized", { status: 403 });
     }
 
-    // 2. CORE LOGIC: Handle incoming data from Wix
+    // 2. PROCESS DATA
     if (request.method === "POST") {
-      try {
-        const body = await request.json();
-        
-        // --- ADD YOUR LOGIC HERE ---
-        // Example: Process the body data and return a response
-        return new Response(JSON.stringify({ 
-          message: "Data received", 
-          receivedData: body 
-        }), {
-          headers: { "Content-Type": "application/json" },
-        });
-      } catch (e) {
-        return new Response("Invalid JSON", { status: 400 });
-      }
+      const data = await request.json();
+      
+      // 3. STORE DATA (Example: Saving to Cloudflare KV)
+      // This requires setting up a KV namespace later.
+      // await env.MY_KV_NAMESPACE.put("latest_data", JSON.stringify(data));
+      
+      return new Response("Data processed", { status: 200 });
     }
 
-    return new Response("Empire Active", { status: 200 });
+    return new Response("Empire System Active", { status: 200 });
   }
 };
