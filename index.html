@@ -1,18 +1,37 @@
-<div id="age-gate">
-  <h1>Welcome</h1>
-  <p>Please verify your age to continue.</p>
-  <button onclick="setAge(10)">Under 13</button>
-  <button onclick="setAge(15)">13 - 17</button>
-  <button onclick="setAge(21)">18+</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire Frontend</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        #status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Empire App</h1>
+    <button onclick="sendData()">Test Connection</button>
+    <div id="status"></div>
 
-<script>
-  async function setAge(age) {
-    await fetch('/api/set-age', {
-      method: 'POST',
-      body: JSON.stringify({ session_id: sid, age: age })
-    });
-    document.getElementById('age-gate').style.display = 'none';
-    document.getElementById('chat-area').style.display = 'block';
-  }
-</script>
+    <script>
+        async function sendData() {
+            document.getElementById('status').innerText = 'Sending...';
+            try {
+                const response = await fetch('https://moneymaker-ai.alt3r3d-pho3nix.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'X-Empire-Auth': 'IST.eyJraWQiOiJQb3pIX2FDMiIsImFsZyI6IlJTMjU2In0.eyJkYXRhIjoie1wiaWRcIjpcIjRiODg1NjM5LWI4N2EtNDcxZC04OTkwLTVjODM0YTM5MzM5MVwiLFwiaWRlbnRpdHlcIjp7XCJ0eXBlXCI6XCJhcHBsaWNhdGlvblwiLFwiaWRcIjpcIjExYmI4MGVmLTVmMTMtNDA2MC1hNWIwLWM3NTM3Nzk2NGVmZVwifSxcInRlbmFudFwiOntcInR5cGVcIjpcImFjY291bnRcIixcImlkXCI6XCIxZmI0ZDJlYS1iNDUyLTQ1MTAtYmY5NC1jNDI0ZjAzNWQ5ZGVcIn19IiwiaWF0IjoxNzcwODM1NzI1fQ.m1RegFLcbH0Z-QIJ0sqP0EEtPYj2YLE2thPv0mxOHZAgsoG0nXK-BrPd5Jva3ASEAzQOtgOURT2N7KV9ZJz6wHfA9IGPeKm_Dkr-_rD-Xuluwb_4KDYrd-PL2ZaKyluRJDdG8VX7IcOv9asDTSkkXmYPvWU0nEL6YcT25nAIgO5tWzD-9P3nrqkgmcidmEYmopa8Z5AlnXyWffS0GmRgeRT04fPo-PTVFWZiuZvmZbWo5b5C3-3u599jU1tbKEhXsvU9nrNV615K6RUoxtlW37RJHxdDcLaBLzASDF9sgvlNHQN6xiRy_4uzFAhBI1C9ZL0Mjg3TFCuoypYtzEdTjw'
+                    },
+                    body: JSON.stringify({ test: "Hello from phone" })
+                });
+                const result = await response.text();
+                document.getElementById('status').innerText = 'Response: ' + result;
+            } catch (error) {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            }
+        }
+    </script>
+</body>
+</html>
