@@ -1,0 +1,114 @@
+----- CLI crash report at 2026-02-11T17:08:52.345Z
+Error Trace
+FailedToInstallDependencies: FailedToInstallDependencies
+    at Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:91:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+caused by: FailedToInstallPackages: FailedToInstallPackages
+    at NPM.runInstall (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/adapters/npm.ts:46:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:89:7)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+caused by: Error: Command failed with exit code 1: npm install
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated samsam@1.3.0: This package has been deprecated in favour of @sinonjs/samsam
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+npm warn deprecated gauge@4.0.4: This package is no longer supported.
+npm warn deprecated tar@6.2.1: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated sinon@4.5.0: 16.1.1
+npm warn deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+npm error code 1
+npm error path /data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd
+npm error command failed
+npm error command sh -c node install.js
+npm error /data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:43
+npm error     throw new Error(`Unsupported platform: ${platformKey}`);
+npm error           ^
+npm error
+npm error Error: Unsupported platform: android arm64 LE
+npm error     at pkgAndSubpathForCurrentPlatform (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:43:11)
+npm error     at checkAndPreparePackage (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:216:28)
+npm error     at Object.<anonymous> (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:245:1)
+npm error     at Module._compile (node:internal/modules/cjs/loader:1761:14)
+npm error     at Module._extensions..js (node:internal/modules/cjs/loader:1893:10)
+npm error     at Module.load (node:internal/modules/cjs/loader:1481:32)
+npm error     at Module._load (node:internal/modules/cjs/loader:1300:12)
+npm error     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+npm error     at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+npm error     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+npm error
+npm error Node.js v24.13.0
+npm error A complete log of this run can be found in: /data/data/com.termux/files/home/.npm/_logs/2026-02-11T17_07_11_055Z-debug-0.log
+    at makeError (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/node_modules/execa/lib/error.js:60:11)
+    at handlePromise (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/node_modules/execa/index.js:124:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async runCommand (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/shell/shell-client.ts:20:22)
+    at async NPM.runInstall (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/adapters/npm.ts:44:7)
+    at async Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:89:7)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+Error Info
+{
+  "packageManager": "npm"
+}
+----- CLI crash report at 2026-02-11T17:08:52.606Z
+Error Trace
+FailedToInstallDependencies: FailedToInstallDependencies
+    at Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:91:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+caused by: FailedToInstallPackages: FailedToInstallPackages
+    at NPM.runInstall (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/adapters/npm.ts:46:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:89:7)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+caused by: Error: Command failed with exit code 1: npm install
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated samsam@1.3.0: This package has been deprecated in favour of @sinonjs/samsam
+npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+npm warn deprecated gauge@4.0.4: This package is no longer supported.
+npm warn deprecated tar@6.2.1: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated sinon@4.5.0: 16.1.1
+npm warn deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+npm error code 1
+npm error path /data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd
+npm error command failed
+npm error command sh -c node install.js
+npm error /data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:43
+npm error     throw new Error(`Unsupported platform: ${platformKey}`);
+npm error           ^
+npm error
+npm error Error: Unsupported platform: android arm64 LE
+npm error     at pkgAndSubpathForCurrentPlatform (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:43:11)
+npm error     at checkAndPreparePackage (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:216:28)
+npm error     at Object.<anonymous> (/data/data/com.termux/files/home/moneymaker-cloud/moneymaker-cloud/node_modules/workerd/install.js:245:1)
+npm error     at Module._compile (node:internal/modules/cjs/loader:1761:14)
+npm error     at Module._extensions..js (node:internal/modules/cjs/loader:1893:10)
+npm error     at Module.load (node:internal/modules/cjs/loader:1481:32)
+npm error     at Module._load (node:internal/modules/cjs/loader:1300:12)
+npm error     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+npm error     at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+npm error     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+npm error
+npm error Node.js v24.13.0
+npm error A complete log of this run can be found in: /data/data/com.termux/files/home/.npm/_logs/2026-02-11T17_07_11_055Z-debug-0.log
+    at makeError (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/node_modules/execa/lib/error.js:60:11)
+    at handlePromise (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/node_modules/execa/index.js:124:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async runCommand (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/shell/shell-client.ts:20:22)
+    at async NPM.runInstall (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/package-manager/src/adapters/npm.ts:44:7)
+    at async Object.installDependencies (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/tasks.ts:89:7)
+    at async <anonymous> (/data/data/com.termux/files/home/.npm/_npx/167aff61dff8be4c/node_modules/@wix/create-new-packages/app-command/src/task-runner.ts:54:7)
+Error Info
+{
+  "packageManager": "npm"
+}
